@@ -30,6 +30,10 @@ void ExecutaOperacoes(){
     inicializaTabelaComZero(tabelaFrequencia);
     preencheTabelaFrequencia((unsigned char*) textoLido, tabelaFrequencia);
     imprimeTabelaFrequencia(tabelaFrequencia);
+    //Imprime o texto lido
+    printf("\n%s\n", textoLido);
+    printf("\n%c\n", textoLido[26]);
+    printf("\n%d\n", textoLido[26]);
 
     free(textoLido);
 }
