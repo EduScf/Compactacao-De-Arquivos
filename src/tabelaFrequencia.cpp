@@ -8,7 +8,6 @@ void inicializaTabelaComZero(unsigned int tab[]){
 
 void preencheTabelaFrequencia(unsigned char texto[], unsigned int tab[]){
     int i = 0;
-    printf("\tTabela de Frequencia\n");
     while(texto[i] != '\0'){
         tab[texto[i]]++;
         i++;
@@ -16,9 +15,18 @@ void preencheTabelaFrequencia(unsigned char texto[], unsigned int tab[]){
 }
 
 void imprimeTabelaFrequencia(unsigned int tab[]){
+    printf("\tTabela de Frequencia\n");
     for(int i = 0; i < TAM; i++){
         if(tab[i] != 0){
-            printf("\t%d = %d = %c\n", i, tab[i], i);
+            printf("\t%d = %u = %c\n", i, tab[i], i);
         }
+    }
+}
+
+void imprimeTextoLido(unsigned char texto[]){
+    printf("\n%s", texto);
+    for(int i = 0; i < 12; i++){
+        printf("\n%c", texto[i]);
+        printf("\n%d", texto[i]);
     }
 }

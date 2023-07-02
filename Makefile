@@ -14,13 +14,13 @@ SRC = src
 OBJ = obj
 INC = include
 BIN = bin
-OBJS = $(OBJ)/leituraArquivo.o $(OBJ)/tabelaFrequencia.o $(OBJ)/main.o
-HDRS = $(INC)/leituraArquivo.hpp $(INC)/tabelaFrequencia.hpp
+OBJS = $(OBJ)/leituraArquivo.o $(OBJ)/tabelaFrequencia.o $(OBJ)/listaOrdenada.o $(OBJ)/dicionario.o $(OBJ)/codificacao.o $(OBJ)/descodificacao.o $(OBJ)/compactacao.o $(OBJ)/descompactacao.o $(OBJ)/main.o
+HDRS = $(INC)/leituraArquivo.hpp $(INC)/tabelaFrequencia.hpp $(INC)/listaOrdenada.hpp $(INC)/dicionario.hpp $(INC)/codificacao.hpp $(INC)/descodificacao.hpp $(INC)/compactacao.hpp $(INC)/descompactacao.hpp
 CFLAGS = -Wall -c -g3 -I$(INC) -pg
 
 EXE = $(BIN)/main
 INPUT_FILE = textoExemplo.txt
-INPUT_FILE2 = textoVideo.txt
+INPUT_FILE2 = textoIngles.txt
 
 all:  $(EXE)
 
@@ -36,8 +36,26 @@ $(OBJ)/leituraArquivo.o: $(HDRS) $(SRC)/leituraArquivo.cpp
 $(OBJ)/tabelaFrequencia.o: $(HDRS) $(SRC)/tabelaFrequencia.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/tabelaFrequencia.o $(SRC)/tabelaFrequencia.cpp
 
+$(OBJ)/listaOrdenada.o: $(HDRS) $(SRC)/listaOrdenada.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/listaOrdenada.o $(SRC)/listaOrdenada.cpp
+
+$(OBJ)/dicionario.o: $(HDRS) $(SRC)/dicionario.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/dicionario.o $(SRC)/dicionario.cpp
+
+$(OBJ)/codificacao.o: $(HDRS) $(SRC)/codificacao.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/codificacao.o $(SRC)/codificacao.cpp
+
+$(OBJ)/descodificacao.o: $(HDRS) $(SRC)/descodificacao.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/descodificacao.o $(SRC)/descodificacao.cpp
+
+$(OBJ)/compactacao.o: $(HDRS) $(SRC)/compactacao.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/compactacao.o $(SRC)/compactacao.cpp
+
+$(OBJ)/descompactacao.o: $(HDRS) $(SRC)/descompactacao.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/descompactacao.o $(SRC)/descompactacao.cpp
+
 run: $(EXE)
-	$(EXE) $(INPUT_FILE2)
+	$(EXE) $(INPUT_FILE)
 	
 clean:
 	rm -f $(EXE) $(OBJS) gmon.out
