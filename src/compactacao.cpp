@@ -1,7 +1,7 @@
 #include "../include/compactacao.hpp"
 
 void compactar(unsigned char str[], char *nomeArquivoDestino){
-    FILE *arquivo = fopen(nomeArquivoDestino, "wb");
+    FILE *arquivo = fopen(nomeArquivoDestino, "ab");
     int i = 0, j = 7;
     unsigned char mascara, byte = 0; //00000000 1000000
 

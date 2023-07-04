@@ -10,7 +10,9 @@ int descobrirTamanho(char *nomeArquivo);
 
 void lerTexto(char *nomeArquivo, unsigned char *texto);
 
-void copiaTexto(const char *nomeArquivoDestino, unsigned char *texto, int tamanho);
+void copiaTabelaFrequencia(unsigned int tabelaFrequencia[], char *arquivoDestino);
+
+void carregaTabela(unsigned int tabelaFrequencia[], char *arquivoFonte);
 
 void ExecutaOperacoes(char *nomeArquivo, char *nomeArquivoDestino,int flag);
 

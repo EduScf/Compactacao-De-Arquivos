@@ -7,6 +7,8 @@ int alturaArvore(No *raiz);
 
 char** alocaDicionario(int colunas);
 
+void liberarDicionario(char** dicionario, int colunas);
+
 void gerarDicionario(char **dicionario, No *raiz, char *caminho, int colunas);
 
 void imprimeDicionario(char **dicionario);

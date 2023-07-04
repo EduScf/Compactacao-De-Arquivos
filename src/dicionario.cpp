@@ -27,6 +27,13 @@ char** alocaDicionario(int colunas){
     return dicionario;
 }
 
+void liberarDicionario(char** dicionario, int colunas) {
+    for (int i = 0; i < TAM; i++) {
+        free(dicionario[i]); // Libera a memória da linha i
+    }
+    free(dicionario); // Libera a memória da matriz
+}
+
 void gerarDicionario(char **dicionario, No *raiz, char *caminho, int colunas){
     char esquerda[colunas], direita[colunas];
     if(raiz->esq == NULL && raiz->dir == NULL)
